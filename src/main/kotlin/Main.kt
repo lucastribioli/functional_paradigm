@@ -3,11 +3,20 @@ fun main(args: Array<String>) {
 //    testaTipoFuncaoClasse()
 //    testaTipoFuncaoLambda()
 //    testaTipoFuncaoAnonimo()
+    testaAnotacaoRetornoLambda()
+
 }
 
-
-
-
+fun testaAnotacaoRetornoLambda(){
+    val teste: (Double) -> Double = qualquerCoisa@{salario ->
+        if (salario > 2){
+            return@qualquerCoisa salario + 200
+        }
+        salario + 1000
+    }
+    println(teste(1.0))
+    println(teste(4.0))
+}
 fun testaTipoFuncaoReferencia(){
     val teste = ::funcaoTeste
     print(teste("a", "b"))
