@@ -3,7 +3,15 @@ fun main(args: Array<String>) {
 //    testaTipoFuncaoClasse()
 //    testaTipoFuncaoLambda()
 //    testaTipoFuncaoAnonimo()
-    testaAnotacaoRetornoLambda()
+//    testaAnotacaoRetornoLambda()
+    testaLet()
+
+}
+
+fun testaLet(){
+    Endereco(logradouro = "Rua do João", numero = "290").let {
+        "Rua:${it.logradouro} -  Número:${it.numero}".uppercase()
+    }.let (::println)
 
 }
 
